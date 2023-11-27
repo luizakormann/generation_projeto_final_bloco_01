@@ -6,7 +6,7 @@ public abstract class Planta {
 	private String nome;
 	private int tipo;
 	private float preco;
-	
+
 	public Planta(int id, String nome, int tipo, float preco) {
 		super();
 		this.id = id;
@@ -46,7 +46,7 @@ public abstract class Planta {
 	public void setPreco(float preco) {
 		this.preco = preco;
 	}
-	
+
 	public void visualizar() {
 		String tipoimp = "";
 
@@ -63,5 +63,5 @@ public abstract class Planta {
 		System.out.println(" Tipo da planta: " + tipoimp);
 		System.out.printf(" Preço de venda da planta: R$%.2f\n", this.preco);
 	}
-	
+
 }

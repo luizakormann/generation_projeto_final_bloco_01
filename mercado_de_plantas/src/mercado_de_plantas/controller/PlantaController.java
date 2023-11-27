@@ -8,9 +8,9 @@ import mercado_de_plantas.repository.PlantaRepository;
 
 public class PlantaController implements PlantaRepository {
 
-	//Criar collection
+	// Criar collection
 	private ArrayList<Planta> listaPlantas = new ArrayList<Planta>();
-	
+
 	// variável para gerar os IDs
 	int id = 0;
 
@@ -18,7 +18,7 @@ public class PlantaController implements PlantaRepository {
 	public void cadastrar(Planta planta) {
 		listaPlantas.add(planta);
 		System.out.println("A planta " + planta.getNome() + " foi cadastrada com sucesso!");
-		
+
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class PlantaController implements PlantaRepository {
 		for (var planta : listaPlantas) {
 			planta.visualizar();
 		}
-		
+
 	}
 
 	@Override
@@ -36,34 +36,33 @@ public class PlantaController implements PlantaRepository {
 			plantas.get().visualizar();
 		} else
 			System.out.println("Nenhuma planta com id " + id + "foi localizada.");
-		
+
 	}
 
 	@Override
 	public void atualizar(Planta planta) {
 		Optional<Planta> buscaPlanta = buscarNaCollection(planta.getId());
-		
+
 		if (buscaPlanta.isPresent()) {
 			listaPlantas.set(listaPlantas.indexOf(buscaPlanta.get()), planta);
 			System.out.println("A planta " + planta.getNome() + "foi atualizada com sucesso!");
 		} else
 			System.out.println("Nenhuma planta com id " + id + "foi localizada.");
-		
+
 	}
 
 	@Override
 	public void deletar(int id) {
 		Optional<Planta> plantas = buscarNaCollection(id);
-		
+
 		if (plantas.isPresent()) {
 			listaPlantas.remove(plantas.get());
-				System.out.println("A planta com id " + id + "foi removida com sucesso!");
+			System.out.println("A planta com id " + id + "foi removida com sucesso!");
 		}
-		
+
 	}
-	
+
 	// métodos auxiliares
-	
 
 	public int gerarId() {
 		return ++id;
@@ -78,5 +77,5 @@ public class PlantaController implements PlantaRepository {
 		}
 		return Optional.empty();
 	}
-	
+
 }

@@ -18,7 +18,7 @@ public class Menu {
 		String nome;
 		int opcao, tipo, internas, externas, id = 0;
 		float preco;
-		
+
 		PlantaController plantas = new PlantaController();
 
 		while (true) {
@@ -91,9 +91,9 @@ public class Menu {
 			case 4 -> {
 				System.out.println("Atualizar informações de uma planta. Prossiga com as informações solicitadas:");
 				System.out.println();
-				
+
 				Optional<Planta> planta = plantas.buscarNaCollection(id);
-				
+
 				if (planta.isPresent()) {
 
 					System.out.println("Digite o nome da planta: ");

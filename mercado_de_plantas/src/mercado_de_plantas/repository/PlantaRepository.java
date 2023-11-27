@@ -6,8 +6,12 @@ public interface PlantaRepository {
 
 	// Implementação do CRUD
 	public void cadastrar(Planta planta);
+
 	public void listarTodas();
+
 	public void buscarPlanta(int id);
+
 	public void atualizar(Planta planta);
+
 	public void deletar(int id);
 }
