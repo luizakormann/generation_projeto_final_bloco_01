@@ -85,7 +85,7 @@ public class Menu {
 			case 3 -> {
 				System.out.println("Localizador de plantas. Por favor, informe o ID da planta: ");
 				id = leia.nextInt();
-				plantas.buscarNaCollection(id);
+				plantas.buscarPlanta(id);
 				break;
 			}
 			case 4 -> {
