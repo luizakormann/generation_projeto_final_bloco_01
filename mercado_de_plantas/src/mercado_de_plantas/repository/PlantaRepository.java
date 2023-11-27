@@ -10,5 +10,4 @@ public interface PlantaRepository {
 	public void buscarPlanta(int id);
 	public void atualizar(Planta planta);
 	public void deletar(int id);
-
 }
